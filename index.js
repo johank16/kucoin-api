@@ -183,7 +183,9 @@ class Kucoin {
    *   }
    * }
    */
-  getExchangeRates(params = {}) {
+  getExchangeRates(params) {
+    if(params == null) 
+      params = {} 
     params.coins = (params.symbols ? params.symbols.join(',') : '')
     return this.doRequest('get', '/open/currencies', params)
   }
@@ -229,7 +231,9 @@ class Kucoin {
    *   "data": null
    * }
    */
-  changeLanguage(params = {}) {
+  changeLanguage(params) {
+    if(params == null) 
+      params = {} 
     return this.doSignedRequest('post', '/user/change-lang', params)
   }
 
@@ -324,7 +328,9 @@ class Kucoin {
    *   }
    * }
    */
-  getPromotionRewardInfo(params = {}) {
+  getPromotionRewardInfo(params) {
+    if(params == null) 
+      params = {} 
     params.coin = (params.symbol ? params.symbol : '')
     return this.doSignedRequest('get', '/account/' + (params.symbol != undefined ? params.symbol + '/' : '') + 'promotion/info', params)
   }
@@ -351,7 +357,9 @@ class Kucoin {
    *   "data": []
    * }
    */
-  getPromotionRewardSummary(params = {}) {
+  getPromotionRewardSummary(params) {
+    if(params == null) 
+      params = {} 
     params.coin = (params.symbol ? params.symbol : '')
     return this.doSignedRequest('get', '/account/' + (params.symbol != undefined ? params.symbol + '/' : '') + 'promotion/sum')
   }
@@ -386,7 +394,9 @@ class Kucoin {
    *   }
    * }
    */
-  getDepositAddress(params = {}) {
+  getDepositAddress(params) {
+    if(params == null) 
+      params = {} 
     return this.doSignedRequest('get', '/account/' + params.symbol + '/wallet/address')
   }
 
@@ -402,7 +412,9 @@ class Kucoin {
    *   address: 'AWcAwoXK6gbMUTojHMHEx8FgEfaVK9Hz5s'
    * }).then(console.log).catch(console.error)
    */
-  createWithdrawal(params = {}) {
+  createWithdrawal(params) {
+    if(params == null) 
+      params = {} 
     params.coin = params.symbol
     return this.doSignedRequest('post', '/account/' + params.symbol + '/withdraw/apply', params)
   }
@@ -418,7 +430,9 @@ class Kucoin {
    *   txOid: '59fa71673b7468701cd714a1'
    * }).then(console.log).catch(console.error)
    */
-  cancelWithdrawal(params = {}) {
+  cancelWithdrawal(params) {
+    if(params == null) 
+      params = {} 
     return this.doSignedRequest('post', '/account/' + params.symbol + '/withdraw/cancel', params)
   }
 
@@ -476,7 +490,9 @@ class Kucoin {
    *   }
    * }
    */
-  getDepositAndWithdrawalRecords(params = {}) {
+  getDepositAndWithdrawalRecords(params) {
+    if(params == null) 
+      params = {} 
     return this.doSignedRequest('get', '/account/' + params.symbol + '/wallet/records', params)
   }
 
@@ -508,7 +524,9 @@ class Kucoin {
    * @example <caption>Retrieve the balance for all coins (including zero balances):</caption>
    * kc.getBalance().then(console.log).catch(console.error)
    */
-  getBalance(params = {}) {
+  getBalance(params) {
+    if(params == null) 
+      params = {} 
     return this.doSignedRequest('get', '/account/' + (params.symbol ? params.symbol + '/' : '') + 'balance')
   }
 
@@ -537,7 +555,9 @@ class Kucoin {
    *   }
    * }
    */
-  createOrder(params = {}) {
+  createOrder(params) {
+    if(params == null) 
+      params = {} 
     params.symbol = params.pair
     return this.doSignedRequest('post', '/order', params)
   }
@@ -565,7 +585,9 @@ class Kucoin {
    *   }
    * }
    */
-  getActiveOrders(params = {}) {
+  getActiveOrders(params) {
+    if(params == null) 
+      params = {} 
     params.symbol = params.pair
     return this.doSignedRequest('get', '/' + params.pair + '/order/active', params)
   }
@@ -591,7 +613,9 @@ class Kucoin {
    *   data: null
    * }
    */
-  cancelOrder(params = {}) {
+  cancelOrder(params) {
+    if(params == null) 
+      params = {} 
     params.symbol = params.pair
     return this.doSignedRequest('post', '/cancel-order', params)
   }
@@ -637,7 +661,9 @@ class Kucoin {
    *   }
    * }
    */
-  getDealtOrders(params = {}) {
+  getDealtOrders(params) {
+    if(params == null) 
+      params = {} 
     params.symbol = params.pair
     return this.doSignedRequest('get', '/' + params.pair + '/deal-orders', params)
   }
@@ -679,7 +705,9 @@ class Kucoin {
    *   }
    * }
    */
-  getTicker(params = {}) {
+  getTicker(params) {
+    if(params == null) 
+      params = {} 
     return this.doRequest('get', '/' + params.pair + '/open/tick')
   }
 
@@ -721,7 +749,9 @@ class Kucoin {
    *   "data": [[0.628, 227.1374, 142.6422872], [0.632999, 10, 6.32999], [0.633, 4.20740806, 2.6632893], [0.65, 0.6346, 0.41249], [0.6611, 6.7998, 4.49534778], [0.665699, 0.1875, 0.12481856]]
    * }
    */
-  getOrderBooks(params = {}) {
+  getOrderBooks(params) {
+    if(params == null) 
+      params = {} 
     params.symbol = params.pair
     return this.doRequest('get', '/' + params.pair + '/open/orders' + (params.type ? '-' + params.type.toLowerCase() : ''), params)
   }
@@ -746,7 +776,9 @@ class Kucoin {
    *   "data": [[1509591191000, "SELL", 0.608005, 10.771, 6.54882186], [1509591198000, "SELL", 0.608005, 10.7648, 6.54505222], [1509591512000, "SELL", 0.608005, 13.0292, 7.92181875], [1509591714000, "BUY", 0.627999, 19.9774, 12.54578722], [1509591951000, "SELL", 0.608005, 15.6217, 9.49807171], [1509592026000, "SELL", 0.608005, 15.2009, 9.2422232], [1509592105000, "SELL", 0.608005, 13.4969, 8.20618268], [1509592219000, "BUY", 0.627999, 20.9506, 13.15695585], [1509592311000, "BUY", 0.627999, 23.5278, 14.77543487], [1509592724000, "SELL", 0.608005, 8.6837, 5.27973302]]
    * }
    */
-  getRecentlyDealtOrders(params = {}) {
+  getRecentlyDealtOrders(params) {
+    if(params == null) 
+      params = {} 
     return this.doRequest('get', '/' + params.pair + '/open/deal-orders', params)
   }
 
