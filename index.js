@@ -38,7 +38,7 @@ class Kucoin {
    * @param {Object} params Any parameters for the request.
    * @return {Promise} An object containing the API response.
    */
-  rawRequest(method, endpoint, signed = false, params) {
+  rawRequest(method, endpoint, signed, params) {
     let deferred = Q.defer()
     let path = this.path_prefix + endpoint
     let nonce = new Date().getTime()
