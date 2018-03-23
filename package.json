@@ -1,6 +1,6 @@
 {
-  "name": "kucoin-api",
-  "version": "0.0.3",
+  "name": "kucoin-api-my-version",
+  "version": "0.0.1",
   "description": "Node.js client for the KuCoin API",
   "main": "index.js",
   "scripts": {
@@ -13,12 +13,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Satoshinaire/kucoin-api.git"
+    "url": "git@github.com:johank16/kucoin-api-my-version.git"
   },
   "bugs": {
-    "url": "https://github.com/Satoshinaire/kucoin-api/issues"
+    "url": "https://github.com/johank16/kucoin-api-my-version/issues"
   },
-  "homepage": "https://github.com/Satoshinaire/kucoin-api",
+  "homepage": "https://github.com/johank16/kucoin-api-my-version",
   "author": "Satoshinaire",
   "license": "MIT",
   "dependencies": {
