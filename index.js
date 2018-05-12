@@ -185,7 +185,7 @@ class Kucoin {
    */
   getExchangeRates(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.coins = (params.symbols ? params.symbols.join(',') : '')
     return this.doRequest('get', '/open/currencies', params)
   }
@@ -233,7 +233,7 @@ class Kucoin {
    */
   changeLanguage(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doSignedRequest('post', '/user/change-lang', params)
   }
 
@@ -330,7 +330,7 @@ class Kucoin {
    */
   getPromotionRewardInfo(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.coin = (params.symbol ? params.symbol : '')
     return this.doSignedRequest('get', '/account/' + (params.symbol != undefined ? params.symbol + '/' : '') + 'promotion/info', params)
   }
@@ -359,7 +359,7 @@ class Kucoin {
    */
   getPromotionRewardSummary(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.coin = (params.symbol ? params.symbol : '')
     return this.doSignedRequest('get', '/account/' + (params.symbol != undefined ? params.symbol + '/' : '') + 'promotion/sum')
   }
@@ -396,7 +396,7 @@ class Kucoin {
    */
   getDepositAddress(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doSignedRequest('get', '/account/' + params.symbol + '/wallet/address')
   }
 
@@ -414,7 +414,7 @@ class Kucoin {
    */
   createWithdrawal(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.coin = params.symbol
     return this.doSignedRequest('post', '/account/' + params.symbol + '/withdraw/apply', params)
   }
@@ -432,7 +432,7 @@ class Kucoin {
    */
   cancelWithdrawal(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doSignedRequest('post', '/account/' + params.symbol + '/withdraw/cancel', params)
   }
 
@@ -492,7 +492,7 @@ class Kucoin {
    */
   getDepositAndWithdrawalRecords(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doSignedRequest('get', '/account/' + params.symbol + '/wallet/records', params)
   }
 
@@ -526,7 +526,7 @@ class Kucoin {
    */
   getBalance(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doSignedRequest('get', '/account/' + (params.symbol ? params.symbol + '/' : '') + 'balance')
   }
 
@@ -557,7 +557,7 @@ class Kucoin {
    */
   createOrder(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.symbol = params.pair
     return this.doSignedRequest('post', '/order', params)
   }
@@ -587,7 +587,7 @@ class Kucoin {
    */
   getActiveOrders(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.symbol = params.pair
     return this.doSignedRequest('get', '/' + params.pair + '/order/active', params)
   }
@@ -615,7 +615,7 @@ class Kucoin {
    */
   cancelOrder(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.symbol = params.pair
     return this.doSignedRequest('post', '/cancel-order', params)
   }
@@ -663,7 +663,7 @@ class Kucoin {
    */
   getDealtOrders(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.symbol = params.pair
     return this.doSignedRequest('get', '/' + params.pair + '/deal-orders', params)
   }
@@ -707,7 +707,7 @@ class Kucoin {
    */
   getTicker(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doRequest('get', '/' + params.pair + '/open/tick')
   }
 
@@ -751,7 +751,7 @@ class Kucoin {
    */
   getOrderBooks(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     params.symbol = params.pair
     return this.doRequest('get', '/' + params.pair + '/open/orders' + (params.type ? '-' + params.type.toLowerCase() : ''), params)
   }
@@ -778,7 +778,7 @@ class Kucoin {
    */
   getRecentlyDealtOrders(params) {
     if(params == null) 
-      params = {} 
+      params = {}
     return this.doRequest('get', '/' + params.pair + '/open/deal-orders', params)
   }
 
